@@ -4,6 +4,25 @@
     box-sizing: border-box;
     font-size: 16px;
 }
+.product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 4rem;
+    
+}
+.product-container > div {
+    border: 2px solid whitesmoke;
+}
+
+.details-list{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: center;
+  gap:.5rem
+}
 
 .active {
     color: white;
@@ -22,16 +41,14 @@
     padding: 2rem;
     background-color: cadetblue;
     margin-bottom: 1rem;
-}
-.container{
+} 
+.item-container{
+  padding: 1rem ;
 }
 .grid-container {
-  padding: 2rem;
-  size: 0cm;
-  border-radius: 8px;
-  display: block;
-  margin : 35px;
-  width: 20%;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+    width: 100%;
+    height: 30rem;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
