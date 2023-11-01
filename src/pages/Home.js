@@ -26,9 +26,11 @@ function Home() {
     const filteredProducts = searchProducts(products, searchQuery);
 
     return (
-        <div>
+      <div>
+        <div className="search-container">
             <h1>Product Listing Page</h1>
             <SearchBar onSearch={(query) => setSearchQuery(query)} />
+        </div>
             <ProductList 
                 products={filteredProducts}
                 onAddToCart={addToCartHandler}

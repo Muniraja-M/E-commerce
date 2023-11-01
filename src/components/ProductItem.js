@@ -13,7 +13,7 @@ function ProductItem({ product, onAddToCart }) {
             <div class="details-list">
                 <h2>{product.title}</h2>
                 <p>${product.price}</p>
-                <button onClick={() => onAddToCart(product)}>
+                <button className="addCart-button" onClick={() => onAddToCart(product)}>
                     Add to Cart
                 </button>
             </div>
