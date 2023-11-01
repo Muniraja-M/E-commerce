@@ -7,7 +7,6 @@ import { searchProducts } from '../utils';
 import { addToCart } from '../redux/cartslice';
 function Home({ isBrief }) {
     const { data: products, isLoading, isError } = useProducts();
-    console.log(products);
     const [searchQuery, setSearchQuery] = useState('');
     const dispatch = useDispatch(); // Get the dispatch function
 
@@ -24,7 +23,6 @@ function Home({ isBrief }) {
     }
 
     const filteredProducts = searchProducts(products, searchQuery);
-    console.log(filteredProducts);
 
     return (
         <div>
