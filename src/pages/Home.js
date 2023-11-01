@@ -1,13 +1,13 @@
-// Home.js
 import React, { useState } from 'react';
 import { useProducts } from '../api';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import ProductList from '../components/ProductList';
 import SearchBar from '../components/SearchBar';
 import { searchProducts } from '../utils';
 import { addToCart } from '../redux/cartslice';
-function Home() {
+function Home({ isBrief }) {
     const { data: products, isLoading, isError } = useProducts();
+    console.log(products);
     const [searchQuery, setSearchQuery] = useState('');
     const dispatch = useDispatch(); // Get the dispatch function
 
@@ -24,16 +24,18 @@ function Home() {
     }
 
     const filteredProducts = searchProducts(products, searchQuery);
+    console.log(filteredProducts);
 
     return (
-      <div>
-        <div className="search-container">
-            <h1>Product Listing Page</h1>
-            <SearchBar onSearch={(query) => setSearchQuery(query)} />
-        </div>
-            <ProductList 
+        <div>
+            <div className='search-container'>
+                <h1>Product Listing Page</h1>
+                <SearchBar onSearch={(query) => setSearchQuery(query)} />
+            </div>
+            <ProductList
                 products={filteredProducts}
                 onAddToCart={addToCartHandler}
+                isBrief={isBrief}
             />
         </div>
     );

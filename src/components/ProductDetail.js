@@ -1,4 +1,3 @@
-// ProductDetail.js
 import React from "react";
 
 function ProductDetail({ product }) {

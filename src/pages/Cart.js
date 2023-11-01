@@ -1,4 +1,3 @@
-// Cart.js
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart } from '../redux/cartslice';
@@ -11,7 +10,7 @@ function Cart() {
     };
 
     return (
-        <div>
+        <div className="cartView-container">
             <h1>Shopping Cart</h1>
             {cart.length === 0 ? (
                 <p>Your cart is empty.</p>

@@ -11,7 +11,7 @@ function App() {
             <Menu />
             <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='/product' element={<Product />} />
+                <Route path='/product' element={<Home isBrief={true} />} />
                 <Route path='/cart' element={<Cart />} />
             </Routes>
         </>

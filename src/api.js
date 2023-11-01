@@ -1,4 +1,3 @@
-// api.js
 import { useQuery } from "react-query";
 
 // Define a function to fetch the products

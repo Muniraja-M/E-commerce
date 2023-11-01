@@ -1,8 +1,13 @@
-// ProductItem.js
 import React from 'react';
 import '../styles.css';
-
-function ProductItem({ product, onAddToCart }) {
+function ProductItem({ product, onAddToCart, isBrief }) {
+    const briefDetails = (
+        <>
+            <p>Description: {product.description}</p>
+            <p>Rating: {product.rating?.rate}</p>
+            <p>Reviews: {product.rating?.count}</p>
+        </>
+    );
     return (
         <div className='item-container'>
             <img
@@ -10,10 +15,14 @@ function ProductItem({ product, onAddToCart }) {
                 src={product.image}
                 alt={product.title}
             />
-            <div class="details-list">
+            <div class='details-list'>
                 <h2>{product.title}</h2>
-                <p>${product.price}</p>
-                <button className="addCart-button" onClick={() => onAddToCart(product)}>
+                <p>Price: ${product.price}</p>
+                {isBrief && briefDetails}
+                <button
+                    className='addCart-button'
+                    onClick={() => onAddToCart(product)}
+                >
                     Add to Cart
                 </button>
             </div>
