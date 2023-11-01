@@ -5,13 +5,20 @@ import ProductList from '../components/ProductList';
 import SearchBar from '../components/SearchBar';
 import { searchProducts } from '../utils';
 import { addToCart } from '../redux/cartslice';
+import Notification from '../components/Notification';
+
 function Home({ isBrief }) {
     const { data: products, isLoading, isError } = useProducts();
     const [searchQuery, setSearchQuery] = useState('');
     const dispatch = useDispatch(); // Get the dispatch function
+    const [notification, setNotification] = useState(null);
 
     const addToCartHandler = (product) => {
         dispatch(addToCart(product));
+        setNotification('Item added to the cart');
+        setTimeout(() => {
+            setNotification(null);
+        }, 3000);
     };
 
     if (isLoading) {
@@ -35,6 +42,12 @@ function Home({ isBrief }) {
                 onAddToCart={addToCartHandler}
                 isBrief={isBrief}
             />
+            {notification && (
+                <Notification
+                    message={notification}
+                    onClose={() => setNotification(null)}
+                />
+            )}
         </div>
     );
 }

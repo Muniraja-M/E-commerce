@@ -101,6 +101,43 @@ ul > li {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.notification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: green;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.notification-content {
+    margin-right: 30px;
+}
+/* Add this to your CSS */
+.cart-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-count {
+    position: absolute;
+    top: 20px; /* Adjust the position as needed */
+    background-color: green;
+    color: #fff;
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
 @media (max-width: 768px) {
     .grid-container {
         grid-template-columns: repeat(
