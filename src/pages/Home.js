@@ -29,7 +29,7 @@ function Home() {
         <div>
             <h1>Product Listing Page</h1>
             <SearchBar onSearch={(query) => setSearchQuery(query)} />
-            <ProductList
+            <ProductList 
                 products={filteredProducts}
                 onAddToCart={addToCartHandler}
             />
