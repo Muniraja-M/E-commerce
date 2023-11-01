@@ -1,13 +1,13 @@
 // Cart.js
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { removeFromCart } from '../redux/cartslice';
 
 function Cart() {
     const cart = useSelector((state) => state.cart); // Access the cart state using useSelector
-
-    const removeFromCart = (productId) => {
-        const updatedCart = cart.filter((product) => product.id !== productId);
-        setCart(updatedCart);
+    const dispatch = useDispatch();
+    const removeFromCartHandler = (productId) => {
+        dispatch(removeFromCart(productId));
     };
 
     return (
@@ -20,7 +20,11 @@ function Cart() {
                     {cart.map((product) => (
                         <li key={product.id}>
                             {product.title}
-                            <button onClick={() => removeFromCart(product.id)}>
+                            <button
+                                onClick={() =>
+                                    removeFromCartHandler(product.id)
+                                }
+                            >
                                 Remove
                             </button>
                         </li>

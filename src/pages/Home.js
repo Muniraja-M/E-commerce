@@ -1,17 +1,17 @@
 // Home.js
 import React, { useState } from 'react';
 import { useProducts } from '../api';
-import { useSelector, useDispatch } from 'react-redux'; 
+import { useSelector, useDispatch } from 'react-redux';
 import ProductList from '../components/ProductList';
 import SearchBar from '../components/SearchBar';
 import { searchProducts } from '../utils';
-
+import { addToCart } from '../redux/cartslice';
 function Home() {
     const { data: products, isLoading, isError } = useProducts();
     const [searchQuery, setSearchQuery] = useState('');
     const dispatch = useDispatch(); // Get the dispatch function
 
-    const addToCart = (product) => {
+    const addToCartHandler = (product) => {
         dispatch(addToCart(product));
     };
 
@@ -29,7 +29,10 @@ function Home() {
         <div>
             <h1>Product Listing Page</h1>
             <SearchBar onSearch={(query) => setSearchQuery(query)} />
-            <ProductList products={filteredProducts} onAddToCart={addToCart} />
+            <ProductList
+                products={filteredProducts}
+                onAddToCart={addToCartHandler}
+            />
         </div>
     );
 }
