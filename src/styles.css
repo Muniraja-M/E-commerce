@@ -1,4 +1,26 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.active {
+    color: white;
+}
+.disactive {
+    text-decoration: none;
+    color: black;
+}
+.menu > a {
+    font-size: 20px;
+}
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5rem;
+
+    background-color: teal;
+    margin-bottom: 1rem;
 }
