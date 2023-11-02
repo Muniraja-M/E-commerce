@@ -19,12 +19,12 @@ function ProductItem({ product, onAddToCart, isBrief }) {
                 <h2>{product.title}</h2>
                 <p>Price: ${product.price}</p>
                 {isBrief && briefDetails}
-                <button
+                {isBrief?"":<button
                     className='addCart-button'
                     onClick={() => onAddToCart(product)}
                 >
                     Add to Cart
-                </button>
+                </button>}
             </div>
         </div>
     );

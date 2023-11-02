@@ -37,7 +37,7 @@ function Home({ isBrief }) {
                 <h1 className='font'>
                     {isBrief ? 'Product Details Page' : 'Product Listing Page'}
                 </h1>
-                <SearchBar onSearch={(query) => setSearchQuery(query)} />
+                {isBrief?"":< SearchBar onSearch={(query) => setSearchQuery(query)} />}
             </div>
             <ProductList
                 products={filteredProducts}

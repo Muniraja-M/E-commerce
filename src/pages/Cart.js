@@ -8,7 +8,12 @@ function Cart() {
     const removeFromCartHandler = (productId) => {
         dispatch(removeFromCart(productId));
     };
+function Increment(){
 
+}
+function Increment(){
+    
+}
     return (
         <div className="cartView-container">
             <h1 className='font'>Shopping Cart</h1>
@@ -18,7 +23,16 @@ function Cart() {
                 <ul>
                     {cart.map((product) => (
                         <li key={product.id}>
+                            <img className='pic'
+                src={product.image}
+                alt={product.title}
+            />
                             {product.title}
+                            <div>
+                            <button onClick={()=>{IncrCount()}}>+</button>
+                            <span>{"  "}</span>
+                            <button onClick={()=>{DecrCount()}}>-</button>
+                            </div>
                             <button 
                                 onClick={() =>
                                     removeFromCartHandler(product.id)
