@@ -5,6 +5,10 @@ function Product() {
 
     return (
         <div>
+             <div className='search-container'>
+                <h1 className='font'>Product Page</h1>
+                <SearchBar onSearch={(query) => setSearchQuery(query)} />
+            </div>
             <h1>{cart.title}</h1>
             <img src={cart.image} alt={cart.title} />
             <p>Price: ${cart.price}</p>

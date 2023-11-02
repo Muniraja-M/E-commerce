@@ -11,7 +11,7 @@ function Cart() {
 
     return (
         <div className="cartView-container">
-            <h1>Shopping Cart</h1>
+            <h1 className='font'>Shopping Cart</h1>
             {cart.length === 0 ? (
                 <p>Your cart is empty.</p>
             ) : (
@@ -19,7 +19,7 @@ function Cart() {
                     {cart.map((product) => (
                         <li key={product.id}>
                             {product.title}
-                            <button
+                            <button 
                                 onClick={() =>
                                     removeFromCartHandler(product.id)
                                 }
