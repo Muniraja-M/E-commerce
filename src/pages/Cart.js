@@ -24,15 +24,10 @@ function Increment(){
                     {cart.map((product) => (
                         <li className ="list"key={product.id}>
                             <img className='pic'
-                src={product.image}
-                alt={product.title}
+                            src={product.image}
+                            alt={product.title}
             />
                             {product.title}
-                            <div>
-                            <button onClick={()=>{IncrCount()}}>+</button>
-                            <span>{"  "}</span>
-                            <button onClick={()=>{DecrCount()}}>-</button>
-                            </div>
                             <button 
                                 onClick={() =>
                                     removeFromCartHandler(product.id)
