@@ -8,12 +8,6 @@ function Cart() {
     const removeFromCartHandler = (productId) => {
         dispatch(removeFromCart(productId));
     };
-function Increment(){
-
-}
-function Increment(){
-    
-}
     return (
         <div className="cartView-container">
             <h1 className='font'>Shopping Cart</h1>
