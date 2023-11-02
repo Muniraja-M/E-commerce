@@ -22,7 +22,7 @@ function Cart() {
                             alt={product.title}
             />
                             {product.title}
-                            <button 
+                            <button className='remove'
                                 onClick={() =>
                                     removeFromCartHandler(product.id)
                                 }
