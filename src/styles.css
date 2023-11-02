@@ -158,8 +158,14 @@ ul > li {
 }
 button{
     cursor: pointer;
+    color: crimson;
 }
 .pic{
     height: 40px;
     width: 40px;
 }
+.list{
+    border-radius: 15%;
+    border-color:cadetblue;
+}
+

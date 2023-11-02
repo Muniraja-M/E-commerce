@@ -22,7 +22,7 @@ function Increment(){
             ) : (
                 <ul>
                     {cart.map((product) => (
-                        <li key={product.id}>
+                        <li className ="list"key={product.id}>
                             <img className='pic'
                 src={product.image}
                 alt={product.title}
