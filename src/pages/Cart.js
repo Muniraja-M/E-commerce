@@ -8,6 +8,20 @@ function Cart() {
     const removeFromCartHandler = (productId) => {
         dispatch(removeFromCart(productId));
     };
+
+    const [quantity, setQuantity]=useState(0);
+     
+    const incNum =()=>{
+        setQuantity(quantity+1)
+        
+    }
+    const DcrNum =()=>{
+        if(quantity>0){
+        setQuantity(quantity-1)}
+        else{
+            setQuantity(0)
+        }
+    }
     return (
         <div className="cartView-container">
             <h1 className='font'>Shopping Cart</h1>
@@ -21,7 +35,13 @@ function Cart() {
                             src={product.image}
                             alt={product.title}
             />
-                            {product.title}
+                            {product.title}<br/>
+                            Price:${product.price}
+                            <div className='wrapper'> 
+                            <button onClick={DcrNum}>-</button>
+                            <span>{quantity}</span>
+                            <button onClick={incNum}>+</button>
+                            </div>
                             <button className='remove'
                                 onClick={() =>
                                     removeFromCartHandler(product.id)
