@@ -22,9 +22,13 @@ function Product() {
     );
 
     return (
-        <div>
+        <div className='item-container' style={{ margin: 'auto', gap: '2rem' }}>
             <h1>{selectedProduct.title}</h1>
-            <img src={selectedProduct.image} alt={selectedProduct.title} />
+            <img
+                src={selectedProduct.image}
+                alt={selectedProduct.title}
+                className='grid-container'
+            />
             <p>Price: ${selectedProduct.price}</p>
             <p>Description: {selectedProduct.description}</p>
             <p>Rating: {selectedProduct.rating?.rate}</p>
