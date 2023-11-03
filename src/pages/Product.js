@@ -22,7 +22,10 @@ function Product() {
     );
 
     return (
-        <div className='item-container' style={{ margin: 'auto', gap: '2rem' }}>
+        <div
+            className='item-container'
+            style={{ margin: 'auto', padding: '10rem' }}
+        >
             <h1>{selectedProduct.title}</h1>
             <img
                 src={selectedProduct.image}
