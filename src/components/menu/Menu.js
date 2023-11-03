@@ -4,8 +4,7 @@ import { useSelector } from 'react-redux';
 
 const { PRODUCT_DETAILS_PATH, PRODUCT_LIST_PATH, CART_PATH } = SCREENS;
 const menuLists = [
-    { id: crypto.randomUUID(), name: 'ProductLists', to: PRODUCT_DETAILS_PATH },
-    { id: crypto.randomUUID(), name: 'ProductDetail', to: PRODUCT_LIST_PATH },
+    { id: crypto.randomUUID(), name: 'ProductLists', to: PRODUCT_LIST_PATH },
     { id: crypto.randomUUID(), name: 'Cart', to: CART_PATH },
 ];
 const Menu = () => {
