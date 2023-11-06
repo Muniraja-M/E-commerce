@@ -14,7 +14,7 @@ function ProductItem({ product, onAddToCart, isBrief }) {
         navigate(`/productDetail/${product.id}`);
     };
     return (
-        <div className='item-container'>
+        <div className='col-lg-12 col-md-12 mb-4 mb-lg-0 bg-secondary p-2 text-dark bg-opacity-10 rounded-4'>
             <img
                 className='grid-container'
                 src={product.image}
@@ -22,14 +22,15 @@ function ProductItem({ product, onAddToCart, isBrief }) {
                 onClick={(product) => redirectHandler(product)}
             />
             <div class='details-list'>
-                <h2>{product.title}</h2>
+                <h2 className='h5'>{product.title}</h2>
                 <p>Price: ${product.price}</p>
                 {isBrief && briefDetails}
                 {isBrief ? (
                     ''
                 ) : (
                     <button
-                        className='addCart-button'
+                    type='button'
+                        className='btn btn-outline-success'
                         onClick={() => onAddToCart(product)}
                     >
                         Add to Cart

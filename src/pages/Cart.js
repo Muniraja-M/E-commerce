@@ -12,7 +12,7 @@ function Cart() {
 
     return (
         <div className='cartView-container'>
-            <h1 className='font'>Shopping Cart</h1>
+            <h1 className='h3'>Shopping Cart</h1>
             {cart.length === 0 ? (
                 <p>Your cart is empty.</p>
             ) : (

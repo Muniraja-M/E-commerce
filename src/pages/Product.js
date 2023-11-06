@@ -37,11 +37,11 @@ function Product() {
 
     return (
         <div
-            className='items-container'
+            className='col-lg-5 img-fluid mx-auto d-block bg-secondary p-2 text-dark bg-opacity-10 rounded-4'
             style={{ }}
         >
-            <h1 className='font'>Product Detail Page</h1><br/>
-            <h1>{selectedProduct.title}</h1><br/>
+            <h1 className='display-6 text-center'>Product Details</h1><br/>
+            <h1 className='h4'>{selectedProduct.title}</h1><br/>
             <img
                 src={selectedProduct.image}
                 alt={selectedProduct.title}
@@ -52,7 +52,7 @@ function Product() {
             <p><b>Rating:</b> {selectedProduct.rating?.rate}</p><br/>
             <p><b>Reviews:</b> {selectedProduct.rating?.count}</p><br/>
             <button
-                        className='addCart-button'
+                        className='btn btn-outline-success'
                         onClick={() => addToCartHandler(selectedProduct)}
                     >
                         Add to Cart

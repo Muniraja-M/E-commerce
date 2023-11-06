@@ -22,7 +22,10 @@ function Home({ isBrief }) {
     };
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <div className="d-flex align-items-center">
+        <strong>Loading...</strong>
+        <div className="spinner-border ml-auto " role="status" aria-hidden="true"></div>
+      </div>;
     }
 
     if (isError) {
@@ -34,7 +37,7 @@ function Home({ isBrief }) {
     return (
         <div>
             <div className='search-container'>
-                <h1 className='font'>
+                <h1 className='display-6'>
                     {isBrief ? 'Product Details Page' : 'Product Listing Page'}
                 </h1>
                 {isBrief ? (

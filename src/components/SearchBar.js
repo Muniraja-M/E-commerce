@@ -8,18 +8,10 @@ function SearchBar({ onSearch }) {
     };
 
     return (
-        <div>
-            <input
-                type='text'
-                value={searchQuery}
-                placeholder='Enter Product Details'
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className='input-search'
-            />
-            <button className='search-button' onClick={handleSearch}>
-                Search
-            </button>
-        </div>
+        <div className="input-group w-50 p-3" >
+  <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" onChange={(e) => setSearchQuery(e.target.value)}/>
+  <button type="button" className="btn btn-outline-primary" onClick={handleSearch}>search</button>
+</div>
     );
 }
 
