@@ -10,6 +10,7 @@
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     padding: 4rem;
+    cursor: pointer;
 }
 .product-container > div {
     border: 2px solid whitesmoke;
@@ -95,6 +96,16 @@ ul > li {
     position: sticky;
     font-family: monospace;
 }
+.items-container{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-image: linear-gradient(cadetblue, white);
+    position: sticky;
+    font-family: monospace;
+    width: 50%;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    margin: auto;
+    padding: 3rem;
+}
 .grid-container {
     border-radius: 8px;
     width: 100%;
@@ -107,8 +118,8 @@ ul > li {
 
 .notification {
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 55px;
+    right: 200px;
     background-color: green;
     color: #fff;
     padding: 10px;
@@ -155,6 +166,7 @@ ul > li {
     margin: 0%;
     font-size: 25px;
     font-family: monospace;
+    text-align: center;
 }
 .remove{
     background-color:rgb(136, 196, 198); 
