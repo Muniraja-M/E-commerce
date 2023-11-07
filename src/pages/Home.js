@@ -1,18 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useProducts } from '../api';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ProductList from '../components/ProductList';
 import SearchBar from '../components/SearchBar';
 import { searchProducts } from '../utils';
 import { addToCart } from '../redux/cartslice';
 import Notification from '../components/Notification';
+import { fetchProductsStart } from '../redux/productslice';
 
 function Home({ isBrief }) {
-    const { data: products, isLoading, isError } = useProducts();
+    // const { data: products, isLoading, isError } = useProducts();
     const [searchQuery, setSearchQuery] = useState('');
-    const dispatch = useDispatch(); // Get the dispatch function
+    const dispatch = useDispatch();
+    const {
+        data: products,
+        isLoading,
+        isError,
+    } = useSelector((state) => state.products);
     const [notification, setNotification] = useState(null);
-
+    
     const addToCartHandler = (product) => {
         dispatch(addToCart(product));
         setNotification('Item added to the cart');
@@ -21,11 +27,21 @@ function Home({ isBrief }) {
         }, 3000);
     };
 
+    useEffect(() => {
+        dispatch(fetchProductsStart()); // This dispatches the action to initiate the API call
+    }, [dispatch]);
+
     if (isLoading) {
-        return <div className="d-flex align-items-center">
-        <strong>Loading...</strong>
-        <div className="spinner-border ml-auto " role="status" aria-hidden="true"></div>
-      </div>;
+        return (
+            <div className='d-flex align-items-center'>
+                <strong>Loading...</strong>
+                <div
+                    className='spinner-border ml-auto '
+                    role='status'
+                    aria-hidden='true'
+                ></div>
+            </div>
+        );
     }
 
     if (isError) {

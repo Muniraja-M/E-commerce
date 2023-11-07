@@ -21,7 +21,7 @@ function ProductItem({ product, onAddToCart, isBrief }) {
                 alt={product.title}
                 onClick={(product) => redirectHandler(product)}
             />
-            <div class='details-list'>
+            <div className='details-list'>
                 <h2 className='h5'>{product.title}</h2>
                 <p>Price: ${product.price}</p>
                 {isBrief && briefDetails}
@@ -29,7 +29,7 @@ function ProductItem({ product, onAddToCart, isBrief }) {
                     ''
                 ) : (
                     <button
-                    type='button'
+                        type='button'
                         className='btn btn-outline-success'
                         onClick={() => onAddToCart(product)}
                     >

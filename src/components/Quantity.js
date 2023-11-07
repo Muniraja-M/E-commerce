@@ -17,7 +17,12 @@ const Quantity = ({ price }) => {
         <>
             Price:${price * quantity}
             <div className='wrapper'>
-                <button onClick={DcrNum}>-</button>
+                <button
+                    onClick={DcrNum}
+                    disabled={quantity === 1 ? true : false}
+                >
+                    -
+                </button>
                 <span>{quantity}</span>
                 <button onClick={incNum}>+</button>
             </div>
