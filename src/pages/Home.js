@@ -6,7 +6,7 @@ import SearchBar from '../components/SearchBar';
 import { searchProducts } from '../utils';
 import { addToCart } from '../redux/cartslice';
 import Notification from '../components/Notification';
-import { fetchProductsStart } from '../redux/productslice';
+import {  fetchProducts } from '../redux/productslice';
 
 function Home({ isBrief }) {
     // const { data: products, isLoading, isError } = useProducts();
@@ -18,7 +18,7 @@ function Home({ isBrief }) {
         isError,
     } = useSelector((state) => state.products);
     const [notification, setNotification] = useState(null);
-    
+
     const addToCartHandler = (product) => {
         dispatch(addToCart(product));
         setNotification('Item added to the cart');
@@ -26,9 +26,13 @@ function Home({ isBrief }) {
             setNotification(null);
         }, 3000);
     };
-
+    /* 
     useEffect(() => {
         dispatch(fetchProductsStart()); // This dispatches the action to initiate the API call
+    }, [dispatch]); */
+
+    useEffect(() => {
+        dispatch(fetchProducts()); // Dispatch the async thunk
     }, [dispatch]);
 
     if (isLoading) {
