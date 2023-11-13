@@ -1,4 +1,4 @@
-// src/redux/sagas.js
+/* // src/redux/sagas.js
 
 import { put, takeLatest, all } from 'redux-saga/effects';
 import {
@@ -31,3 +31,4 @@ function* watchFetchProducts() {
 export default function* rootSaga() {
     yield all([watchFetchProducts()]);
 }
+ */

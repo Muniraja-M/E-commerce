@@ -25,7 +25,7 @@ const productsSlice = createSlice({
         isError: null,
     },
     reducers: {
-        fetchProductsStart: (state) => {
+        /* fetchProductsStart: (state) => {
             state.isLoading = true;
             state.isError = null;
         },
@@ -38,7 +38,7 @@ const productsSlice = createSlice({
             state.data = [];
             state.isLoading = false;
             state.isError = action.payload;
-        },
+        }, */
     },
     extraReducers: (builder) => {
         builder
@@ -60,9 +60,9 @@ const productsSlice = createSlice({
 });
 
 export const {
-    fetchProductsSuccess,
+    /* fetchProductsSuccess,
     fetchProductsStart,
-    fetchProductsFailure,
+    fetchProductsFailure, */
 } = productsSlice.actions;
 
 export default productsSlice.reducer;
